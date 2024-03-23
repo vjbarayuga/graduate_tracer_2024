@@ -25,14 +25,21 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(
-  cors({
-    credentials: true,
-    //react frontend
-    //origin: 'http://localhost:3000',
-    origin: 'https://graduate-tracer-2024-331a.vercel.app',
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     //react frontend
+//     //origin: 'http://localhost:3000',
+//     //origin: 'https://graduate-tracer-2024-331a.vercel.app',
+//     origin: 'http://localhost:3000',
+//   })
+// );
+
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000', // Allow requests from the specified origin
+  credentials: true, // Enable credentials (cookies, authorization headers, etc.)
+};
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
@@ -49,7 +56,7 @@ mongoose
 // });
 
 // Handle all routes with a wildcard
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
@@ -635,7 +642,7 @@ app.post('/logout', (req, res) => {
   res.json({ message: 'Logout successful' });
 });
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
