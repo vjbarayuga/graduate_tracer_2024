@@ -44,8 +44,8 @@ mongoose
   .then(() => console.log('Database Connected'))
   .catch((err) => console.log('Database not connected', err));
 
-app.get('/test', (req, res) => {
-  res.json('Test Works');
+app.get('/', (req, res) => {
+  res.send('Server is running');
 });
 
 // // Register Route
