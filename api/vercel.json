@@ -8,15 +8,16 @@
     ],
     "routes": [
         { "handle": "filesystem" },
-        { "src": "/personal-info", "dest": "/index.js" },
-        { "src": "/educational-attainment", "dest": "/index.js" },
-        { "src": "/trainings", "dest": "/index.js" },
-        { "src": "/employment", "dest": "/index.js" },
-        { "src": "/user/:username", "dest": "/index.js" },
-        { "src": "/search-users", "dest": "/index.js" },
-        { "src": "/register", "dest": "/index.js" },
-        { "src": "/login", "dest": "/index.js" },
-        { "src": "/profile", "dest": "/index.js" },
-        { "src": "/logout", "dest": "/index.js" }
+        { "src": "/api/personal-info", "dest": "/index.js" },
+        { "src": "/api/educational-attainment", "dest": "/index.js" },
+        { "src": "/api/trainings", "dest": "/index.js" },
+        { "src": "/api/employment", "dest": "/index.js" },
+        { "src": "/api/user/:username", "dest": "/index.js" },
+        { "src": "/api/search-users", "dest": "/index.js" },
+        { "src": "/api/register", "dest": "/index.js" },
+        { "src": "/api/login", "dest": "/index.js" },
+        { "src": "/api/profile", "dest": "/index.js" },
+        { "src": "/api/logout", "dest": "/index.js" },
+        { "src": "/(.*)", "dest": "/index.js" }
     ]
 }
