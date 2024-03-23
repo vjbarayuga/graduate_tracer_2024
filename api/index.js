@@ -30,7 +30,7 @@ app.use(
     credentials: true,
     //react frontend
     //origin: 'http://localhost:3000',
-    origin: 'https://graduate-tracer-2024-331a.vercel.app/login',
+    origin: '*',
   })
 );
 
