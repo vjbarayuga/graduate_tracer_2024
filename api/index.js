@@ -44,7 +44,12 @@ mongoose
   .then(() => console.log('Database Connected'))
   .catch((err) => console.log('Database not connected', err));
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
+//   res.send('Server is running');
+// });
+
+// Handle all routes with a wildcard
+app.get('*', (req, res) => {
   res.send('Server is running');
 });
 
